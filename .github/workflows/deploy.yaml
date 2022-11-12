@@ -1,0 +1,19 @@
+name: deploy
+
+on: 
+  push:
+    tag: 
+      - '*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: push to server
+        users: appleboy/ssh-action@master
+        with: 
+          host: ${{secrets.IP}}
+          username: ${{secrets.USERNAME}}
+          password: ${{secrets.PASSWORD}}
+          script: cd /home/uptimecrew/Frontend && git reset --hard && git fetch && git pull && npm install && npm run build  

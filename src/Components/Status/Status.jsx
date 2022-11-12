@@ -1,8 +1,13 @@
-import './Status.css';
+function Status(props) {
 
-function Status() {
+    function testingProps () {
+        console.log(props);
+    }
+    testingProps()
+
     return (
-        <div className="status">
+        <div className="h-6 w-2 bg-green-500 rounded">
+            
         </div>
     );
 }
