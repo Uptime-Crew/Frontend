@@ -1,6 +1,9 @@
 name: deploy
 
-on: [tag]
+on:
+  push:
+    tags:
+      - '*'
 
 jobs:
   deploy:
@@ -8,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: push to server
-        uses: appleboy/ssh-action@master
+        users: appleboy/ssh-action@master
         with: 
           host: ${{secrets.IP}}
           username: ${{secrets.USERNAME}}
