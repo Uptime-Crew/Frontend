@@ -16,4 +16,4 @@ jobs:
           host: ${{secrets.IP}}
           username: ${{secrets.USERNAME}}
           password: ${{secrets.PASSWORD}}
-          script: cd /home/uptimecrew/Frontend && git reset --hard && git fetch && git pull && npm install && npm run build  
+          script: cd /home/uptimecrew/Frontend && git reset --hard && git fetch && git pull && npm install && npm run build && echo "${{secrets.creds}}" >> creds.env
