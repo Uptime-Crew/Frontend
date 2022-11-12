@@ -14,7 +14,6 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <h1>TESTING</h1>
       <Status
       props={monitors}
       />
