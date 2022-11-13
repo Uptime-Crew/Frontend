@@ -2,6 +2,7 @@ import './App.css';
 import NavBar from './Components/NavBar/NavBar';
 import Status from './Components/Status/Status';
 import { getAllMonitors } from './Services/monitor';
+import Row from './Components/Row/Row';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      <Row />
       {monitors.monitors.map((monitor) => (
          <Status monitor={monitor} />
       ))}
