@@ -14,9 +14,9 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Status
-      props={monitors}
-      />
+      {monitors.monitors.map((monitor) => (
+         <Status monitor={monitor} />
+      ))}
     </div>
   )
 }
